@@ -19,20 +19,20 @@ def judge_perfect():
     for num in range(1, n + 1):
         divisors = 0  # 因子之和
 
-        for count in range(2, int(num / 2) + 1):
+        for count in range(1, int(num / 2) + 2):
             # 取中间值能够提高算法效率，减少不必要的运算，比较到中值大一点儿的整数（偶数大1，奇数大1以内）
-            print(count)
+            # print("num: " + str(num) + "    count: " + str(count))
 
             if num % count == 0:
                 # print(count)
                 # 因子之和
                 divisors += count
-        # print(divisors)
 
-        if num == divisors:
+        if num == divisors and num != 1:
             # 完数
             # print(num)
-            pass
+            # print("divisors" + str(divisors))
+            print(divisors)
 
 
 if __name__ == '__main__':

@@ -3,6 +3,7 @@
 #  @ Author : ©RichardLau_Cx
 #  @ file   : Richard.py
 #  @ IDE    : PyCharm
+import sys
 
 
 def in_():
@@ -83,6 +84,39 @@ def absolute_sort():
     print(sorted(lists, key=abs))  # build-in
 
 
+def judge_num(char):
+    """
+    此方对判断数字是否为正整数，且不超过10
+    :return: 符合要求的数字
+    """
+    num = int(char)
+
+    if 0 < num < 10:
+        return num
+
+    return
+
+
+def element_overwrite():
+    lists = list(map(judge_num, input().split()))
+    # raise SyntaxError("只能输入一位的数字！")  # 举起语法错误
+
+    while None in lists:
+        lists.remove(None)
+
+    for index in range(len(lists)):
+        if lists[index] % 2 != 0:
+            lists[index] **= 2
+
+        else:
+            lists[index] = int(lists[index]/2)
+
+    print(sorted(lists))
+
+    # n = input()
+    # print(type(n))  # 默认字符串
+
+
 if __name__ == '__main__':
     # in_()
     # sort_()
@@ -91,4 +125,5 @@ if __name__ == '__main__':
     # nest()
     # merge()
     # list_reverse()
-    absolute_sort()
+    # absolute_sort()
+    element_overwrite()
