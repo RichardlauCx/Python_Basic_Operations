@@ -12,13 +12,14 @@ import turtle
 偶：尖角和-360°
 奇：尖角和-180°
 
-偶数可以实现：8、12、16 ---> 规律：可以被四整除
-偶数不可以实现：6、10、14 ---> 规律：不可以被四整除
+偶数又分为：
+8、12、16 ---> 规律：可以被四整除
+6、10、14 ---> 规律：不可以被四整除
 
 棱角分明的正n角形锐顶角w
 w = 180 / n (n为奇数)
 w = 360 / n (n为偶数)
-统一公式：w = 90/n * (3+(-1)n)
+统一公式：w = 90/n * (3+(-1)^n)
 """
 
 
@@ -41,7 +42,7 @@ def temp(n, size):
 
     elif n % 2 == 0:
         if n % 4 == 0:
-            corner = 180 - 360 / n
+            corner = 180 - 360 / n  # 顶角的补角
             # assert half == int, "not int"
 
             for freq in range(n):
@@ -52,7 +53,7 @@ def temp(n, size):
                 t.right(corner)
 
         elif n == 6:
-            # 默认会出现重叠现象
+            # 默认会出现重叠现象 （也可向后合并 -> n % 4 != 0）
             half = n / 2  # 分两部分来绘制
             corner = 180 - 360 / n
             interior_corner = 360 / n  # 内顶角
@@ -63,7 +64,7 @@ def temp(n, size):
                 t.right(corner)
                 t.forward(200)
 
-            t.right(corner)
+            t.right(corner)  # 特例实现法
             t.forward(200 / 3)
             t.left(interior_corner)  # 内角除以二
             t.forward(200 / 3)
