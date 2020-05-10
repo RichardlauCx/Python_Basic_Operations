@@ -5,15 +5,11 @@
 #  @ IDE    : PyCharm
 
 
-from datetime import *
-
-
-def temp():
-    td1 = timedelta(minutes=10)
-    td2 = timedelta(minutes=15)
-
-    print(td1 * 10)
+def sort_():
+    names = ['Jack', 'John', 'Mary']
+    names.sort(reverse=True)  # 逆向排序
+    return names
 
 
 if __name__ == '__main__':
-    temp()
+    print(sort_())
