@@ -34,7 +34,8 @@ class Vector3d:
         相当于修改内置函数print()
         :return: 输出结果格式
         """
-        return '(' + str(self.__x) + ', ' + str(self.__y) + ', ' + str(self.__z) + ')'
+        # return '(' + str(self.__x) + ', ' + str(self.__y) + ', ' + str(self.__z) + ')'
+        return str((self.__x, self.__y, self.__z))  # 直接转换为字符串坐标形式
 
     def __add__(self, v):
         """
