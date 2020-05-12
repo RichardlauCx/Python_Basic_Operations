@@ -13,31 +13,58 @@ class Student:
         self.score_m = score_m  # 数学成绩
         self.score_c = score_c  # 语文成绩
         self.score_e = score_e  # 英语成绩
+        self.total = self.score_m + self.score_c + self.score_e
+
+    # def __gt__(self, other):
+    #     if self.total > other.total:
+    #         return str(self.name) + ' ' + str(self.score_m) + ' ' + str(self.score_c) + ' ' + str(self.score_e)
+    #
+    #     else:
+    #         return str(other.name) + ' ' + str(other.score_m) + ' ' + str(other.score_c) + ' ' + str(other.score_e)
+
+    def __lt__(self, other):
+        """
+        重写小于号的方法，对于sort()函数才有效果
+        :param other:
+        :return:
+        """
+        if self.total < other.total:
+            return False  # 因为要从大到小来排序
+
+        else:
+            return True
 
 
 def start():
-    stu_0 = Student
-    stu_1 = Student
-
+    """
+    通过修改操作符"<"来对应修改内置函数sort()的实现方法
+    :return:
+    """
+    stu = []
     name = input().split(' ')
-    print(name[1])
-    stu_0.name = name[0]
-    stu_1.name = name[1]
-    # print(stu_1.name)
+    amount = len(name)
+    score_m = list(map(int, input().split(' ')))
+    score_c = list(map(int, input().split(' ')))
+    score_e = list(map(int, input().split(' ')))
 
-    score_m = input().split(' ')
-    stu_0.score_m = score_m[0]
-    stu_1.score_m = score_m[1]
+    for i in range(amount):
+        stu.append(Student(name[i], score_m[i], score_c[i], score_e[i]))
 
-    score_c = input().split(' ')
-    stu_0.score_c = score_c[0]
-    stu_1.score_c = score_c[1]
-
-    score_e = input().split(' ')
-    stu_0.score_e = score_e[0]
-    stu_1.score_e = score_e[1]
+    stu.sort()
+    print(str(stu[0].name) + ' ' + str(stu[0].score_m) + ' ' + str(stu[0].score_c) + ' ' + str(stu[0].score_e))
 
     # print(stu_1.name + ' ' + stu_1.score_m + ' ' + stu_1.score_c + ' ' + stu_1.score_e)
+    # print(stu_0)
+
+    # print(stu_0 > stu_1)
+
+
+def func_2():
+    """
+    通过改变排序算法的键判断情况来实现
+    :return: None
+    """
+    pass
 
 
 if __name__ == '__main__':
