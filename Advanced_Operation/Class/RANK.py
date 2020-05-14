@@ -22,7 +22,7 @@ class Student:
     #     else:
     #         return str(other.name) + ' ' + str(other.score_m) + ' ' + str(other.score_c) + ' ' + str(other.score_e)
 
-    def __lt__(self, other):
+    def __lt__(self, other) -> bool:
         """
         重写小于号的方法，对于sort()函数才有效果
         :param other:
@@ -51,6 +51,9 @@ def start():
         stu.append(Student(name[i], score_m[i], score_c[i], score_e[i]))
 
     stu.sort()
+    # stu = sorted(stu, key=lambda x: x.total)  # 如果没有重写__lt__方法的话再通过key进行判断
+    # print(stu)
+    # stu = sorted(stu, key = lambda total: stu[0].total)
     print(str(stu[0].name) + ' ' + str(stu[0].score_m) + ' ' + str(stu[0].score_c) + ' ' + str(stu[0].score_e))
 
     # print(stu_1.name + ' ' + stu_1.score_m + ' ' + stu_1.score_c + ' ' + stu_1.score_e)

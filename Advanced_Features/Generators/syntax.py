@@ -15,4 +15,4 @@ def even_number(max):
 
 if __name__ == '__main__':
     for val in even_number(10):  # 生成器对象
-        print(i)
+        print(val)
