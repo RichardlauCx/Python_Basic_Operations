@@ -24,4 +24,6 @@ def print_triangle():
 if __name__ == '__main__':
     # print_triangle()
 
-    print(time.strftime("%Y-%m-%d %X", time.localtime()))
+    # print(time.strftime("%Y-%m-%d %X", time.localtime()))
+    # print("{1:^2}{2:{0}^10}{3:{0}^6}{4:{0}^4}".format("　", "排名", "学校", "省市", "总分"))
+    print("{3:^10}".format("　", "排名", "学校", "省市", "总分"))
