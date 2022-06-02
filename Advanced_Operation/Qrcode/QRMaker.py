@@ -8,6 +8,7 @@
 import qrcode
 
 """
+
 # 调用制作QR方法，传入url或者想要展示的内容，提供简单调用接口
 # qr = qrcode.make('https://www.baidu.com/')
 qr = qrcode.make('欢迎使用QR生成接口')
@@ -18,8 +19,10 @@ with open('welcome.png', 'wb') as f:
     
 """
 
-data = 'https://kg.qq.com/node/personal?uid=6a9b9b83242c3082&chain_share_id=bRIY3jN-no96MebGznCipWFPW00oqMZe9-ZTMXOKzU4'  # 提供数据源
-QRFile = r'qr.png'
+# data = 'https://kg.qq.com/node/personal?uid=6a9b9b83242c3082&chain_share_id=bRIY3jN-no96MebGznCipWFPW00oqMZe9-ZTMXOKzU4'  # 提供数据源
+data = 'https://www.aihnet.cn/?download=7984'  # 提供数据源
+# QRFile = r'qr.png'
+QRFile = r'android-apk.png'  # 生成二维码名称
 
 # 实例化QRCode类对象
 qr = qrcode.QRCode(
