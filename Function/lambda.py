@@ -65,4 +65,4 @@ if __name__ == '__main__':
     # fun_global()
     # print(Sum(8, 2))
     # func_lambda_1()
-    
+    pass
